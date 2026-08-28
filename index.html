@@ -12,15 +12,14 @@
       rel="stylesheet"
     />
     <link rel="icon" href="assets/icon.png" type="image/png" />
- 
   </head>
   <body>
     <header>
-      <img id="headerLogo" src="assets/icon.png" alt="">
-      <div class="headerText">
-        Movie<span id="Finder">Finder</span></div>
+      <img id="headerLogo" src="assets/icon.png" alt="" />
+      <div class="headerText">Movie<span id="Finder">Finder</span></div>
       <button class="theme-toggle">
-        <img id="theme-toggleIcon"
+        <img
+          id="theme-toggleIcon"
           src="assets/sunny_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
           alt=""
         />
@@ -28,20 +27,21 @@
     </header>
     <main>
       <section class="upperSection">
-        <h1 id="topHeading">Find your next <span id="fav">Favorite</span> Movie</h1>
+        <h1 id="topHeading">
+          Find your next <span id="fav">Favorite</span> Movie
+        </h1>
         <p id="topText">
           Search your favorite movies and discover thousands more.
         </p>
-        <form class="Search-form">
-        </form>
-          <div class="btnWrapper">
-            <input
-              type="text"
-              id="searchBox"
-              placeholder="Search Your Favorite Movie"
-            />
-            <button id="searchBtn">Search</button>
-          </div>
+        <form class="Search-form"></form>
+        <div class="btnWrapper">
+          <input
+            type="text"
+            id="searchBox"
+            placeholder="Search Your Favorite Movie"
+          />
+          <button id="searchBtn">Search</button>
+        </div>
       </section>
       <section class="genre">
         <button class="genreBtn" id="All">All</button>
@@ -59,44 +59,46 @@
       <span id="PM">Popular Movies</span>
       <section class="popularMovies">
         <div class="box">
-          <img class="boxImg" src="assets/interstellar.jpg" alt="">
-           <span class="rating">⭐ 8.6</span>
-               <span class="RD">2014</span>
+          <img class="boxImg" src="assets/interstellar.jpg" alt="" />
+          <span class="rating">⭐ 8.6</span>
+          <span class="RD">2014</span>
         </div>
         <div class="box">
-              <img class="boxImg" src="assets/the God Father.jpg" alt="">
-              <span class="rating">⭐ 9.2</span>
-              <span class="RD">1972</span>
+          <img class="boxImg" src="assets/the God Father.jpg" alt="" />
+          <span class="rating">⭐ 9.2</span>
+          <span class="RD">1972</span>
         </div>
         <div class="box">
-               <img class="boxImg" src="assets/the Dark knight.jpg" alt="">
-                <span class="rating">⭐ 9.0</span>
-                <span class="RD">2008</span>
-
+          <img class="boxImg" src="assets/the Dark knight.jpg" alt="" />
+          <span class="rating">⭐ 9.0</span>
+          <span class="RD">2008</span>
         </div>
         <div class="box">
-                <img class="boxImg" src="assets/the Shawshank Redemption.jpg" alt="">
-                 <span class="rating">⭐ 9.7</span>
-                 <span class="RD">1994</span>
-
+          <img
+            class="boxImg"
+            src="assets/the Shawshank Redemption.jpg"
+            alt=""
+          />
+          <span class="rating">⭐ 9.7</span>
+          <span class="RD">1994</span>
         </div>
         <div class="box">
-                  <img class="boxImg" src="assets/Inception.jpg" alt="">
-                   <span class="rating">⭐ 9.8</span>
-                  <span class="RD">2010</span>
-
+          <img class="boxImg" src="assets/Inception.jpg" alt="" />
+          <span class="rating">⭐ 9.8</span>
+          <span class="RD">2010</span>
         </div>
         <div class="box">
-               <img class="boxImg" src="assets/Avengers EndGame.jpg" alt="">
-               <span class="rating">⭐ 8.4</span>
-               <span class="RD">2019</span>
-    
+          <img class="boxImg" src="assets/Avengers EndGame.jpg" alt="" />
+          <span class="rating">⭐ 8.4</span>
+          <span class="RD">2019</span>
         </div>
         <div id="resultBox" class="box">
-               <img id="resultBoxPoster" class="boxImg" src="" alt="">
-               <span id="resultBoxSpan" class="rating"></span>
-               <span id="resultReleaseDate" class="RD"></span>
+          <img id="resultBoxPoster" class="boxImg" src="" alt="" />
+          <span id="resultBoxSpan" class="rating"></span>
+          <span id="resultReleaseDate" class="RD"></span>
         </div>
+      </section>
+      <section class="searchResults">
       </section>
     </main>
     <script src="index.js"></script>
