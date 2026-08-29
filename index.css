@@ -87,6 +87,7 @@ main {
   width: auto;
   padding: 6px 12px;
   background: #0e152e;
+ margin-top: -5px;
 }
 .genreBtn:hover {
   color: rgb(154, 39, 255);
@@ -110,7 +111,7 @@ main {
   position: absolute;
   color: white;
   padding: 5px 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 #searchBtn {
   height: 30px;
@@ -124,7 +125,7 @@ main {
   border-radius: 10px;
   font-weight: 500;
   padding: 5px 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 #topHeading {
   font-size: 40px;
@@ -143,6 +144,15 @@ main {
   flex-direction: row;
   gap: 20px;
   margin-top: 20px;
+ 
+}
+.allMovies {
+  display: grid;
+  flex-direction: row;
+  grid-template-rows: 30% 30% 30% ;
+  grid-template-columns: 15% 15% 15% 15% 15% 15% ;
+  margin-top: 20px;
+   gap: 20px;
 }
 .overview {
   display: none;
@@ -157,16 +167,20 @@ main {
 }
 #PM {
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .box,
-.searchResultArticle {
+.searchResultArticle ,
+.msBoxes {
   height: 250px;
   width: 150px;
   background-color: rgb(26, 0, 42);
   border-radius: 10px;
   border: 1px solid #0e152e;
   cursor: pointer;
+}
+.msBoxes{
+  margin: 0px 0px 25px 0px;
 }
 .searchResultArticle {
   min-height: 250px;
@@ -178,7 +192,8 @@ main {
   margin-bottom: 5px;
 }
 .boxImg,
-#resultPoster {
+#resultPoster ,
+#msPoster {
   height: 180px;
   width: 150px;
   border-radius: 10px;
