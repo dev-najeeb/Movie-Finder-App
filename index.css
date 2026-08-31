@@ -48,8 +48,7 @@ main {
   font-weight: 100;
   position: left;
 }
-.theme-toggle,
-.genreBtn {
+.theme-toggle {
   background-color: rgb(1, 0, 35);
   border: none;
   cursor: pointer;
@@ -57,6 +56,17 @@ main {
   height: 35px;
   width: 40px;
   margin-top: 10px;
+}
+.genreBtn {
+  color: #f5f5f5;
+  padding: 6px 12px; 
+  /* margin: 10px; */
+  background-color: rgb(44, 0, 83);
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  
+
 }
 .theme-toggle {
   position: absolute;
@@ -74,20 +84,11 @@ main {
   flex-wrap: wrap;
   margin-top: 15px;
   gap: 8px;
-  max-width: 100%;
 }
 
 #fav,
 #Finder {
   color: rgb(150, 29, 255);
-}
-.genreBtn {
-  color: white;
-  height: auto;
-  width: auto;
-  padding: 6px 12px;
-  background: #0e152e;
- margin-top: -5px;
 }
 .genreBtn:hover {
   color: rgb(154, 39, 255);
@@ -113,7 +114,7 @@ main {
   padding: 5px 10px;
   margin-bottom: 30px;
 }
-#searchBtn {
+#Search {
   height: 30px;
   width: 70px;
   border: none;
@@ -146,7 +147,7 @@ main {
   margin-top: 20px;
  
 }
-#genreSection {
+.genreSection {
   display: grid;
   flex-direction: row;
   grid-template-rows: 30% 30% 30% ;
@@ -165,7 +166,7 @@ main {
   margin-right: 57px;
   margin-top: 20px;
 }
-#PM {
+#MT {
   font-size: 20px;
   margin-top: 30px;
 }
@@ -237,4 +238,7 @@ main {
 }
 .visible {
   display: inline;
+}
+.gridActivate{
+  display: grid;
 }
