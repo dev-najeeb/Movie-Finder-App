@@ -71,7 +71,7 @@ function buildMovieHTML(movies) {
         posterUrl = noimg;
       }
       return `
-<article class="msBoxes"> 
+<article class="box"> 
 <img id="msPoster" src="${posterUrl}" alt="">
 <h3 id="h3Title">${movie.title}</h3>
   <span id="RD">${movie.release_date}</span>
