@@ -1,5 +1,7 @@
 const API_KEY = "6c03d5b5d37483a4e164a2aa1c438cec";
 
+const allSection = document.querySelectorAll("Section")
+
 const searchBar = document.getElementById("searchBox");
 const searchBtn = document.getElementById("Search");
 const searchResult = document.querySelector("#searchMovies");
@@ -8,6 +10,7 @@ const MoviesText = document.querySelector("#MT");
 const spellingCheck = document.querySelector("#spellingCheck");
 const genreBtns = document.querySelectorAll(".genreBtn");
 const AllMoviesSection = document.querySelector("#allMovies");
+// const boxes = document.querySelectorAll(".box")
 
 const allBtn = document.getElementById("All");
 const popularBtn = document.querySelector("#Popular");
