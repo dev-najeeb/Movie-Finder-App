@@ -16,7 +16,7 @@ async function fetchMovies(apiurl, amountofArray) {
 function buildMovieHTML(movies) {
   const noimg = "assets/no image.jpg";
   return movies
-  .map((movie , index) => {
+    .map((movie, index) => {
       let posterUrl;
       if (movie.poster_path) {
         posterUrl = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
@@ -25,6 +25,7 @@ function buildMovieHTML(movies) {
       }
       return `
       <div class="box" style="--delay: ${index}"> 
+      <button class="backIcon" type="button" aria-label="Back"><img src="assets/back arrow.svg" alt=""></button>
       <img class="boxImg" src="${posterUrl}" alt="">
       <p class="movieOverview">${movie.overview}</p>
       <h3 id="h3Title">${movie.title}</h3>
@@ -32,19 +33,24 @@ function buildMovieHTML(movies) {
          <button class="showOverview">show overview</button>
       </div> 
   `;
-})
-.join("");
+    })
+    .join("");
 }
 genreBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    genreSection.forEach((section) => {
-      section.classList.add("hidden");
-      section.classList.remove("gridActivate")
+    genreSection.forEach((sec) => {
+      sec.classList.add("hidden");
+      sec.classList.remove("gridActivate");
     });
-    const section = document.getElementById(e.target.id.toLowerCase() + "Movies");
-    console.log(section)
-    section.classList.add("gridActivate");
-    section.classList.remove("hidden");
+    const section = document.getElementById(
+      e.target.id.toLowerCase() + "Movies",
+    );
+    closeAllMovieBoxes(section)
+    console.log(section);
+    if(section){
+      section.classList.add("gridActivate");
+      section.classList.remove("hidden");
+    }
   });
 });
 
@@ -91,76 +97,110 @@ async function showMovies(genreId, element) {
   element.innerHTML = buildMovieHTML(Movies);
 }
 actionBtn.addEventListener("click", () => {
-  MoviesText.innerText = "Action Movies"
+  MoviesText.innerText = "Action Movies";
   showMovies(28, actionMovieSection);
 });
-adventureBtn.addEventListener("click",()=>{
-  MoviesText.innerText = "Adventure Movies"
-  showMovies(12,adventureMovieSection)
-})
-animationBtn.addEventListener("click",()=>{
-  MoviesText.innerText = "Animated Movies"
-  showMovies(16,animationMovieSection)
-})
-horrorBtn.addEventListener("click",()=>{
-  MoviesText.innerText = "Horror Movies"
-  showMovies(27,horrorMovieSection)
-})
-crimeBtn.addEventListener("click",()=>{
-  MoviesText.innerText = "Crime Movies"
-  showMovies(80,crimeMovieSection)
-})
-comedyBtn.addEventListener("click",()=>{
-  MoviesText.innerText = "Comedy Movies"
-  showMovies(35,comedyMovieSection)
-})
-dramaBtn.addEventListener("click",()=>{
-  MoviesText.innerText = "Drama Movies"
-  showMovies(18,dramaMovieSection)
-})
-thrillerBtn.addEventListener("click",()=>{
-  MoviesText.innerText = "Thriller Movies"
-  showMovies(53,thrillerMovieSection)
-})
-romanceBtn.addEventListener("click",()=>{
-  MoviesText.innerText = "Romance Movies"
-  showMovies(10749,romanceMovieSection)
-})
-scifiBtn.addEventListener("click",()=>{
-  MoviesText.innerText = "Science Fiction Movies"
-  showMovies(878 , scifiMovieSection)
-})
-setTimeout(() => {
+adventureBtn.addEventListener("click", () => {
+  MoviesText.innerText = "Adventure Movies";
+  showMovies(12, adventureMovieSection);
+});
+animationBtn.addEventListener("click", () => {
+  MoviesText.innerText = "Animated Movies";
+  showMovies(16, animationMovieSection);
+});
+horrorBtn.addEventListener("click", () => {
+  MoviesText.innerText = "Horror Movies";
+  showMovies(27, horrorMovieSection);
+});
+crimeBtn.addEventListener("click", () => {
+  MoviesText.innerText = "Crime Movies";
+  showMovies(80, crimeMovieSection);
+});
+comedyBtn.addEventListener("click", () => {
+  MoviesText.innerText = "Comedy Movies";
+  showMovies(35, comedyMovieSection);
+});
+dramaBtn.addEventListener("click", () => {
+  MoviesText.innerText = "Drama Movies";
+  showMovies(18, dramaMovieSection);
+});
+thrillerBtn.addEventListener("click", () => {
+  MoviesText.innerText = "Thriller Movies";
+  showMovies(53, thrillerMovieSection);
+});
+romanceBtn.addEventListener("click", () => {
+  MoviesText.innerText = "Romance Movies";
+  showMovies(10749, romanceMovieSection);
+});
+scifiBtn.addEventListener("click", () => {
+  MoviesText.innerText = "Science Fiction Movies";
+  showMovies(878, scifiMovieSection);
+});
+allSection.forEach((section) => {
+  section.addEventListener("click", (event) => {
+    console.log(event)
+    const sectionBtn = event.target.closest("button");
+    if (sectionBtn) {
+      const SelectedSection = sectionBtn.closest(".genreSection");
+      if(!SelectedSection) return;
+      const boxes = SelectedSection.querySelectorAll(".box");
+      const clickedbtnBox = sectionBtn.closest(".box");
+   
+      console.log(boxes);
+     const backIcon = clickedbtnBox.querySelector(".backIcon")
+      console.log(clickedbtnBox);
+      boxes.forEach((box)=>{
+        box.classList.add("hidden")
+        box.classList.remove("visible")
+      })
+      clickedbtnBox.classList.remove("hidden");
   
-  allSection.forEach((section) => {
-    section.addEventListener("click", (event) => {
-      const sectionBtn = event.target.closest("button");
-      if (sectionBtn) {
-        const SelectedSection = sectionBtn.closest(".genreSection")
-        const boxes = SelectedSection.querySelectorAll(".box")
-        const clickedbtnBox = sectionBtn.closest(".box");
-      
-        console.log(boxes)
-        
+      setBox(clickedbtnBox);
+      backIcon.addEventListener("click", (event) => {
+        event.stopPropagation();
         console.log("button was clicked");
-        const poster = clickedbtnBox.querySelector(".boxImg");
-        const title = clickedbtnBox.querySelector("#h3Title");
-        const rd = clickedbtnBox.querySelector(".RD");
-        const overview = clickedbtnBox.querySelector(".movieOverview")
-
-        console.log(clickedbtnBox);
-
-        clickedbtnBox.classList.add("clickedBox");
-        poster.classList.add("clickedboxImg");
-        rd.classList.add("clickedBoxRD");
-        title.classList.add("clickedBoxHeading");
-        overview.classList.add("visible")
-        overview.classList.add("Overview")
+        resetBox(clickedbtnBox);
+        console.log("icon was clicked");
         boxes.forEach((box) => {
-          box.classList.add("hidden");
-        });
-        clickedbtnBox.classList.remove("hidden");
-      }
-    });
+          box.classList.add("visible")
+          box.classList.remove("hidden")
+        })
+      });
+    }
   });
-}, 500);
+});
+function setBox(box) {
+  if(!box) return;
+  box.classList.add("clickedBox", "flexContainer");
+  box.querySelector(".boxImg").classList.add("clickedboxImg");
+  box.querySelector(".RD").classList.add("clickedBoxRD");
+  box.querySelector("#h3Title").classList.add("clickedBoxHeading");
+  box.querySelector(".movieOverview").classList.add("visible", "Overview");
+  box.querySelector(".showOverview").classList.add("hidden");
+  box.querySelector(".backIcon").classList.add("visible");
+}
+function resetBox(box) {
+  if(!box) return;
+  box.classList.remove("clickedBox","hidden","flexContainer");
+  box.querySelector(".boxImg").classList.remove("clickedboxImg");
+  box.querySelector(".RD").classList.remove("clickedBoxRD");
+  box.querySelector("#h3Title").classList.remove("clickedBoxHeading");
+  box.querySelector(".movieOverview").classList.remove("visible", "Overview");
+  box.querySelector(".showOverview").classList.remove("hidden");
+  box.querySelector(".backIcon").classList.remove("visible");
+}
+function closeAllMovieBoxes(currentSection) {
+ 
+  if (!currentSection) return;
+
+  // 🎯 FIX: Only select boxes inside the section the user is entering!
+  const sectionBoxes = currentSection.querySelectorAll(".box");
+  
+  if (sectionBoxes.length === 0) return; 
+
+  sectionBoxes.forEach((box) => {
+    resetBox(box);
+    box.classList.remove("hidden");
+    box.classList.add("visible"); // This safely applies only to the current genre's elements
+  });
+}
