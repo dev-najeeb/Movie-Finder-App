@@ -10,7 +10,6 @@ const MoviesText = document.querySelector("#MT");
 const spellingCheck = document.querySelector("#spellingCheck");
 const genreBtns = document.querySelectorAll(".genreBtn");
 const AllMoviesSection = document.querySelector("#allMovies");
-// const boxes = document.querySelectorAll(".box")
 
 const allBtn = document.getElementById("All");
 const popularBtn = document.querySelector("#Popular");
