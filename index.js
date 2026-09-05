@@ -192,8 +192,6 @@ function resetBox(box) {
 function closeAllMovieBoxes(currentSection) {
  
   if (!currentSection) return;
-
-  // 🎯 FIX: Only select boxes inside the section the user is entering!
   const sectionBoxes = currentSection.querySelectorAll(".box");
   
   if (sectionBoxes.length === 0) return; 
@@ -201,6 +199,6 @@ function closeAllMovieBoxes(currentSection) {
   sectionBoxes.forEach((box) => {
     resetBox(box);
     box.classList.remove("hidden");
-    box.classList.add("visible"); // This safely applies only to the current genre's elements
+    box.classList.add("visible"); 
   });
 }
