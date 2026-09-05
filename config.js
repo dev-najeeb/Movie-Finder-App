@@ -9,9 +9,9 @@ const searchResult = document.querySelector("#searchMovies");
 const MoviesText = document.querySelector("#MT");
 const spellingCheck = document.querySelector("#spellingCheck");
 const genreBtns = document.querySelectorAll(".genreBtn");
-const AllMoviesSection = document.querySelector("#allMovies");
+const AllMoviesSection = document.querySelector("#trendingMovies");
 
-const allBtn = document.getElementById("All");
+const TrendingBtn = document.getElementById("Trending");
 const popularBtn = document.querySelector("#Popular");
 const actionBtn = document.querySelector("#Action");
 const adventureBtn = document.querySelector("#Adventure");
