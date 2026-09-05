@@ -409,6 +409,10 @@ main {
   box-shadow: 0 4px 12px rgba(150, 29, 255, 0.15); 
   transform: translateY(-1px); 
 }
+@media (max-width: 380px) {
+  
+  
+}
 .lowOpacity {
   opacity: 0.5;
   filter: blur(8px);
@@ -433,4 +437,145 @@ main {
 }
 .gridActivate {
   display: grid;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  body{
+    overflow-x: hidden;
+  }
+  header {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #headerLogo {
+    margin: 4px;
+  }
+
+  .headerText {
+    margin: 15px 0 0;
+  }
+
+  .btnWrapper {
+    gap: 10px;
+    width: min(90vw, 550px);
+  }
+
+  #searchBox {
+    position: absolute;
+    width: 90%;
+    height: 50px;
+  } 
+  #Search {
+    flex: 0 0 auto;
+    margin: 10px;
+    margin-left: 250px;
+  }
+  
+  .genreSection {
+    width: min(95vw, 980px);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .searchResults {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .clickedBox {
+    width: min(90vw, 980px);
+    padding: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .upperSection {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  #topHeading {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  #topText {
+    margin: 0;
+    text-align: center;
+  }
+
+  .btnWrapper {
+    align-items: stretch;
+  }
+
+  .genre {
+    padding: 0 12px;
+  }
+
+  .genreBtn {
+    transform: none;
+  }
+
+  .genreBtn:hover,
+  .genreBtn:active {
+    transform: none;
+  }
+
+  #MT {
+    display: block;
+    padding: 0 15px;
+  }
+
+  .genreSection {
+    width: 100%;
+    padding: 0 15px;
+    gap: 12px;
+  }
+
+  .box {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .clickedBox {
+    display: flex !important;
+    flex-direction: column;
+    width: calc(100% - 30px);
+    min-height: 0;
+    margin: 25px auto !important;
+    padding: 18px;
+  }
+
+  .clickedboxImg,
+  .clickedBoxHeading,
+  .clickedBoxRD,
+  .Overview {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+
+  .clickedboxImg {
+    max-height: 55vh;
+  }
+
+  .clickedBoxHeading {
+    margin-top: 20px;
+  }
+
+  .clickedBoxRD {
+    margin-bottom: 15px;
+  }
+
+  .Overview {
+    margin-bottom: 15px;
+  }
 }
