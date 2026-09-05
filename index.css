@@ -71,7 +71,6 @@ main {
   font-size: 25px;
   font-weight: 100;
   position: left;
-
 }
 
 .genreBtn {
@@ -304,12 +303,12 @@ main {
 
 .clickedBox {
   grid-column: 1 / -1 !important;
-  display: grid  !important;
+  display: grid !important;
   grid-template-columns: 28% 72%;
   grid-template-rows: auto auto 1fr auto;
   align-items: start;
   min-height: 60vh;
-  height: auto  !important; 
+  height: auto !important;
   width: 68vw;
   max-width: 980px;
 
@@ -341,11 +340,11 @@ main {
 @keyframes dashboardEntrance {
   0% {
     opacity: 0;
-    transform: scale(0.96) translateY(15px); /* Glides up and starts small */
+    transform: scale(0.96) translateY(15px); 
   }
   100% {
     opacity: 1;
-    transform: scale(1) translateY(0); /* Snaps perfectly to scale */
+    transform: scale(1) translateY(0); 
   }
 }
 .clickedboxImg {
@@ -360,7 +359,7 @@ main {
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-  }
+}
 .clickedBoxHeading {
   grid-column: 2;
   grid-row: 1;
@@ -371,7 +370,6 @@ main {
   line-height: 1.15;
   margin: 5px 0 10px 50px;
   transform: translateY(20px);
-
 }
 .clickedBoxRD {
   grid-column: 2;
@@ -383,7 +381,6 @@ main {
   text-transform: uppercase;
   margin: 0 0 25px 50px;
   transform: translateY(20px);
-
 }
 .Overview {
   font-size: 20px;
@@ -417,14 +414,14 @@ main {
 .backIcon:hover {
   background: rgba(150, 29, 255, 0.08);
   border-color: rgba(150, 29, 255, 0.4);
-  box-shadow: 0 4px 12px rgba(150, 29, 255, 0.15); 
-  transform: translateY(-1px); 
+  box-shadow: 0 4px 12px rgba(150, 29, 255, 0.15);
+  transform: translateY(-1px);
 }
 .lowOpacity {
   opacity: 0.5;
   filter: blur(8px);
 }
-.box.visible{
+.box.visible {
   display: flex;
 }
 .searchResults {
@@ -445,7 +442,6 @@ main {
 .gridActivate {
   display: grid;
 }
-
 
 *,
 *::before,
@@ -476,11 +472,17 @@ main {
   #searchBox {
     position: static;
   }
+  .backIcon {
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    margin-left: 0;
+  }
 
   #Search {
     right: 10px;
   }
-  
+
   .genreSection {
     width: min(95vw, 980px);
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -540,7 +542,6 @@ main {
     width: 100%;
     padding: 0 15px;
     gap: 12px;
-  
   }
 
   .box {
@@ -559,13 +560,17 @@ main {
 
   .clickedboxImg,
   .clickedBoxHeading,
-  .clickedBoxRD,
-  .Overview {
+  .clickedBoxRD {
     width: 100%;
     margin-left: 0;
     transform: none;
   }
-
+  .Overview {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 15px;
+    transform: translateY(20px);
+  }
   .clickedboxImg {
     max-height: 55vh;
   }
