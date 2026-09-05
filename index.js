@@ -172,22 +172,22 @@ allSection.forEach((section) => {
 function setBox(box) {
   if(!box) return;
   box.classList.add("clickedBox", "flexContainer");
-  box.querySelector(".boxImg").classList.add("clickedboxImg");
-  box.querySelector(".RD").classList.add("clickedBoxRD");
-  box.querySelector("#h3Title").classList.add("clickedBoxHeading");
-  box.querySelector(".movieOverview").classList.add("visible", "Overview");
-  box.querySelector(".showOverview").classList.add("hidden");
-  box.querySelector(".backIcon").classList.add("visible");
+  box.querySelector(".boxImg")?.classList.add("clickedboxImg");
+  box.querySelector(".RD")?.classList.add("clickedBoxRD");
+  box.querySelector("#h3Title")?.classList.add("clickedBoxHeading");
+  box.querySelector(".movieOverview")?.classList.add("visible", "Overview");
+  box.querySelector(".showOverview")?.classList.add("hidden");
+  box.querySelector(".backIcon")?.classList.add("visible");
 }
 function resetBox(box) {
   if(!box) return;
   box.classList.remove("clickedBox","hidden","flexContainer");
-  box.querySelector(".boxImg").classList.remove("clickedboxImg");
-  box.querySelector(".RD").classList.remove("clickedBoxRD");
-  box.querySelector("#h3Title").classList.remove("clickedBoxHeading");
-  box.querySelector(".movieOverview").classList.remove("visible", "Overview");
-  box.querySelector(".showOverview").classList.remove("hidden");
-  box.querySelector(".backIcon").classList.remove("visible");
+  box.querySelector(".boxImg")?.classList.remove("clickedboxImg");
+  box.querySelector(".RD")?.classList.remove("clickedBoxRD");
+  box.querySelector("#h3Title")?.classList.remove("clickedBoxHeading");
+  box.querySelector(".movieOverview")?.classList.remove("visible", "Overview");
+  box.querySelector(".showOverview")?.classList.remove("hidden");
+  box.querySelector(".backIcon")?.classList.remove("visible");
 }
 function closeAllMovieBoxes(currentSection) {
  
