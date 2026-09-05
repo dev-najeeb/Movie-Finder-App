@@ -71,17 +71,17 @@ function showResults() {
 searchBtn.addEventListener("click", () => {
   getObject();
 });
-async function DisoverMovies() {
+async function DiscoverMovies() {
   const apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
-  allMovies = await fetchMovies(apiUrl, 18);
-  showAllMovies();
+  trendingMovies = await fetchMovies(apiUrl, 18);
+  showTrendingMovies();
 }
-function showAllMovies() {
+function showTrendingMovies() {
   MoviesText.innerText = "All";
-  AllMoviesSection.innerHTML = buildMovieHTML(allMovies);
+  AllMoviesSection.innerHTML = buildMovieHTML(trendingMovies);
 }
-allBtn.addEventListener("click", () => {
-  DisoverMovies();
+TrendingBtn.addEventListener("click", () => {
+  DiscoverMovies();
 });
 popularBtn.addEventListener("click", () => {
   MoviesText.innerText = "Popular Movies";
