@@ -12,6 +12,11 @@ body {
   overflow-x: hidden;
   min-height: 100%;
   overflow-y: auto;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 header {
@@ -48,7 +53,16 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 500px;
+  position: relative;
+  width: 550px;
+  height: 50px;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.103);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin-left: 30px;
 }
 
 .headerText {
@@ -57,6 +71,7 @@ main {
   font-size: 25px;
   font-weight: 100;
   position: left;
+
 }
 
 .genreBtn {
@@ -101,19 +116,15 @@ main {
 }
 
 #searchBox {
-  display: flex;
-  justify-content: center;
-  height: 40px;
-  width: 550px;
-  background: rgba(0, 0, 0, 0.103);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  position: absolute;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
   color: white;
-  padding: 5px 10px;
-  margin-bottom: 30px;
+  padding: 0 80px 0 10px;
 }
 
 #Search {
@@ -122,13 +133,13 @@ main {
   border: none;
   background-color: rgb(150, 29, 255);
   color: rgb(247, 246, 244);
-  z-index: 1;
-  margin-left: 450px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
   cursor: pointer;
   border-radius: 10px;
   font-weight: 500;
   padding: 5px 10px;
-  margin-bottom: 30px;
 }
 
 #topHeading {
@@ -409,10 +420,6 @@ main {
   box-shadow: 0 4px 12px rgba(150, 29, 255, 0.15); 
   transform: translateY(-1px); 
 }
-@media (max-width: 380px) {
-  
-  
-}
 .lowOpacity {
   opacity: 0.5;
   filter: blur(8px);
@@ -447,12 +454,10 @@ main {
 }
 
 @media (max-width: 900px) {
-  body{
-    overflow-x: hidden;
-  }
   header {
     justify-content: center;
     gap: 10px;
+    width: 100%;
   }
 
   #headerLogo {
@@ -464,19 +469,16 @@ main {
   }
 
   .btnWrapper {
-    gap: 10px;
     width: min(90vw, 550px);
+    margin-left: 0;
   }
 
   #searchBox {
-    position: absolute;
-    width: 90%;
-    height: 50px;
-  } 
+    position: static;
+  }
+
   #Search {
-    flex: 0 0 auto;
-    margin: 10px;
-    margin-left: 250px;
+    right: 10px;
   }
   
   .genreSection {
@@ -502,7 +504,7 @@ main {
   }
 
   #topHeading {
-    font-size: clamp(1.7rem, 8vw, 2.4rem);
+    font-size: 2.4rem;
     line-height: 1.2;
     text-align: center;
   }
@@ -538,6 +540,7 @@ main {
     width: 100%;
     padding: 0 15px;
     gap: 12px;
+  
   }
 
   .box {
